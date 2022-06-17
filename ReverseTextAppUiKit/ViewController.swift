@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func ReverseButton(_ sender: Any) {
         var reversed: String = ""
+        
         var tempString: String = ""
         
         if TextField.text != nil {
