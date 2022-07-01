@@ -9,9 +9,9 @@ import UIKit
 
 final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var reverseButtonOutlet: UIButton!
-    @IBOutlet weak var mainTextField: UITextField!
-    @IBOutlet weak var reversedTextLable: UILabel!
+    @IBOutlet private weak var reverseButtonOutlet: UIButton!
+    @IBOutlet private weak var mainTextField: UITextField!
+    @IBOutlet private weak var reversedTextLable: UILabel!
     
     @IBAction private func ReverseButton(_ sender: UIButton) {
         guard let textFieldText = mainTextField.text else {
