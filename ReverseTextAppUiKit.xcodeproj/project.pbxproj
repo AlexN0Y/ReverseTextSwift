@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DFB3E3982850D15900E964C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3E3972850D15900E964C8 /* AppDelegate.swift */; };
 		DFB3E39A2850D15900E964C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3E3992850D15900E964C8 /* SceneDelegate.swift */; };
-		DFB3E39C2850D15900E964C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3E39B2850D15900E964C8 /* ViewController.swift */; };
+		DFB3E39C2850D15900E964C8 /* ReverseWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3E39B2850D15900E964C8 /* ReverseWordsViewController.swift */; };
 		DFB3E39F2850D15900E964C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB3E39D2850D15900E964C8 /* Main.storyboard */; };
 		DFB3E3A12850D15A00E964C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB3E3A02850D15A00E964C8 /* Assets.xcassets */; };
 		DFB3E3A42850D15A00E964C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB3E3A22850D15A00E964C8 /* LaunchScreen.storyboard */; };
@@ -39,7 +39,7 @@
 		DFB3E3942850D15900E964C8 /* ReverseTextAppUiKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReverseTextAppUiKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB3E3972850D15900E964C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFB3E3992850D15900E964C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DFB3E39B2850D15900E964C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DFB3E39B2850D15900E964C8 /* ReverseWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWordsViewController.swift; sourceTree = "<group>"; };
 		DFB3E39E2850D15900E964C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFB3E3A02850D15A00E964C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFB3E3A32850D15A00E964C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			children = (
 				DFB3E3972850D15900E964C8 /* AppDelegate.swift */,
 				DFB3E3992850D15900E964C8 /* SceneDelegate.swift */,
-				DFB3E39B2850D15900E964C8 /* ViewController.swift */,
+				DFB3E39B2850D15900E964C8 /* ReverseWordsViewController.swift */,
 				DFB3E39D2850D15900E964C8 /* Main.storyboard */,
 				DFB3E3A02850D15A00E964C8 /* Assets.xcassets */,
 				DFB3E3A22850D15A00E964C8 /* LaunchScreen.storyboard */,
@@ -258,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFB3E39C2850D15900E964C8 /* ViewController.swift in Sources */,
+				DFB3E39C2850D15900E964C8 /* ReverseWordsViewController.swift in Sources */,
 				DFB3E3982850D15900E964C8 /* AppDelegate.swift in Sources */,
 				DFB3E39A2850D15900E964C8 /* SceneDelegate.swift in Sources */,
 			);
