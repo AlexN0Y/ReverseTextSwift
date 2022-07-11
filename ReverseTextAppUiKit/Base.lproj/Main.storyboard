@@ -22,6 +22,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="TextFieldActions" destination="BYZ-38-t0r" eventType="editingChanged" id="aKg-Tl-M4f"/>
+                                    <action selector="TextFieldActions" destination="BYZ-38-t0r" eventType="valueChanged" id="mZd-1a-nWN"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="GTe-bC-pMp"/>
                                 </connections>
                             </textField>
@@ -51,7 +53,7 @@
                                     <color key="baseForegroundColor" systemColor="opaqueSeparatorColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="ReverseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HBG-zE-Psh"/>
+                                    <action selector="ReverseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mdC-cd-dM9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reverse words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBB-id-1by">
@@ -86,6 +88,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tOX-Y4-Fal"/>
                     <connections>
                         <outlet property="mainTextField" destination="gNR-P1-5gw" id="B71-Mh-6tf"/>
                         <outlet property="reverseButtonOutlet" destination="c3Q-dp-rLf" id="JqX-MC-35R"/>

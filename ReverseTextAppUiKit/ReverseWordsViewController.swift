@@ -13,6 +13,24 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet private weak var mainTextField: UITextField!
     @IBOutlet private weak var reversedTextLable: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        reverseButtonOutlet.isEnabled = false
+    }
+    
+    
+    @IBAction func TextFieldActions() {
+        guard mainTextField.text != "" else {
+            if reversedTextLable.text != nil {
+                reverseButtonOutlet.setTitle("Clear", for: .normal)
+            } else {
+                reverseButtonOutlet.isEnabled = false
+            }
+            return
+        }
+        reverseButtonOutlet.setTitle("Reverse", for: .normal)
+    }
+    
     @IBAction private func ReverseButton(_ sender: UIButton) {
         guard let textFieldText = mainTextField.text else {
             return
@@ -29,27 +47,17 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        reverseButtonOutlet.isEnabled = false
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    internal func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        guard textField.text != nil else {
-            reverseButtonOutlet.isEnabled = false
-            return false
-        }
-        reverseButtonOutlet.isEnabled = true
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        reverseButtonOutlet.isEnabled = textField.text != nil
         return true
     }
     
-    private func reverseText(_ text: String = "") -> String{
+    private func reverseText(_ text: String = "") -> String {
         var word: String = ""
         var reversed: String = ""
         for character in text {
