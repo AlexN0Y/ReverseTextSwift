@@ -53,7 +53,7 @@
                                     <color key="baseForegroundColor" systemColor="opaqueSeparatorColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="ReverseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mdC-cd-dM9"/>
+                                    <action selector="ReverseButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fhl-3e-w6f"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reverse words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBB-id-1by">

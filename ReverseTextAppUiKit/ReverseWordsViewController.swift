@@ -31,7 +31,8 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
         reverseButtonOutlet.setTitle("Reverse", for: .normal)
     }
     
-    @IBAction private func ReverseButton(_ sender: UIButton) {
+    
+    @IBAction func ReverseButtonAction() {
         guard let textFieldText = mainTextField.text else {
             return
         }
@@ -44,7 +45,6 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
             reverseButtonOutlet.isEnabled = false
             reverseButtonOutlet.setTitle("Reverse", for: .normal)
         }
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
