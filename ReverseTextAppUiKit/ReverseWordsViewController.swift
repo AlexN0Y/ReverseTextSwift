@@ -19,20 +19,21 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func TextFieldActions() {
-        guard mainTextField.text != "" else {
-            if reversedTextLable.text != nil {
-                reverseButtonOutlet.setTitle("Clear", for: .normal)
-            } else {
+    @IBAction func textFieldChanged() {
+        if ((mainTextField.text?.isEmpty) == true) {
+            if ((reversedTextLable.text?.isEmpty) == true) {
                 reverseButtonOutlet.isEnabled = false
+            } else {
+                reverseButtonOutlet.setTitle("Clear", for: .normal)
             }
-            return
+        } else {
+            reverseButtonOutlet.setTitle("Reverse", for: .normal)
         }
-        reverseButtonOutlet.setTitle("Reverse", for: .normal)
+        
     }
     
     
-    @IBAction func ReverseButtonAction() {
+    @IBAction func reverseButtonTapped() {
         guard let textFieldText = mainTextField.text else {
             return
         }

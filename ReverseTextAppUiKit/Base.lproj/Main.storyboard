@@ -22,8 +22,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="TextFieldActions" destination="BYZ-38-t0r" eventType="editingChanged" id="aKg-Tl-M4f"/>
-                                    <action selector="TextFieldActions" destination="BYZ-38-t0r" eventType="valueChanged" id="mZd-1a-nWN"/>
+                                    <action selector="textFieldChanged" destination="BYZ-38-t0r" eventType="editingChanged" id="JtE-U4-kvS"/>
+                                    <action selector="textFieldChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="Vf0-bo-QcO"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="GTe-bC-pMp"/>
                                 </connections>
                             </textField>
@@ -53,7 +53,7 @@
                                     <color key="baseForegroundColor" systemColor="opaqueSeparatorColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="ReverseButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fhl-3e-w6f"/>
+                                    <action selector="reverseButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="RJ8-dk-x4E"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reverse words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBB-id-1by">
