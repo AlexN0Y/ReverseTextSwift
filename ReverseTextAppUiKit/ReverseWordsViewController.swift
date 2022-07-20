@@ -12,6 +12,8 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet private weak var reverseButtonOutlet: UIButton!
     @IBOutlet private weak var mainTextField: UITextField!
     @IBOutlet private weak var reversedTextLable: UILabel!
+    @IBOutlet private weak var separator: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +23,14 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func textFieldChanged() {
         if ((mainTextField.text?.isEmpty) == true) {
+            separator.backgroundColor = UIColor.lightGray
             if ((reversedTextLable.text?.isEmpty) == true) {
                 reverseButtonOutlet.isEnabled = false
             } else {
                 reverseButtonOutlet.setTitle("Clear", for: .normal)
             }
         } else {
+            separator.backgroundColor = UIColor.systemBlue
             reverseButtonOutlet.setTitle("Reverse", for: .normal)
         }
         
@@ -34,6 +38,7 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func reverseButtonTapped() {
+        separator.backgroundColor = UIColor.lightGray
         guard let textFieldText = mainTextField.text else {
             return
         }
