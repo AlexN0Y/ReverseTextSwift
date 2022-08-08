@@ -11,23 +11,24 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet private weak var reverseButton: UIButton!
     @IBOutlet private weak var mainTextField: UITextField!
-    @IBOutlet private weak var Lable: UILabel!
+    @IBOutlet public weak var reverseWordsLable: UILabel!
     @IBOutlet private weak var separator: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         reverseButton.isEnabled = false
+        reverseWordsLable.accessibilityIdentifier = "Lable"
     }
     
     
     @IBAction func textFieldChanged() {
+        reverseButton.setTitle("Reverse", for: .normal)
         if mainTextField.text?.isEmpty == true {
             separator.backgroundColor = UIColor.lightGray
-            reverseButton.isEnabled = false
+                reverseButton.isEnabled = false
         } else {
             separator.backgroundColor = UIColor.systemBlue
-            reverseButton.setTitle("Reverse", for: .normal)
         }
         
     }
@@ -39,11 +40,11 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
             return
         }
         if reverseButton.titleLabel?.text == "Reverse" {
-            Lable.text = reverseText(textFieldText)
+            reverseWordsLable.text = reverseText(textFieldText)
             reverseButton.setTitle("Clear", for: .normal)
         } else {
             mainTextField.text = ""
-            Lable.text = ""
+            reverseWordsLable.text = ""
             reverseButton.isEnabled = false
             reverseButton.setTitle("Reverse", for: .normal)
         }
@@ -59,7 +60,7 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    private func reverseText(_ text: String) -> String {
+    public func reverseText(_ text: String) -> String {
         var word: String = ""
         var reversed: String = ""
         for character in text {
