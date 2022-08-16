@@ -11,14 +11,14 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet private weak var reverseButton: UIButton!
     @IBOutlet private weak var mainTextField: UITextField!
-    @IBOutlet public weak var reverseWordsLable: UILabel!
+    @IBOutlet private weak var reverseWordsLabel: UILabel!
     @IBOutlet private weak var separator: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         reverseButton.isEnabled = false
-        reverseWordsLable.accessibilityIdentifier = "Lable"
+        reverseWordsLabel.accessibilityIdentifier = "Label"
     }
     
     
@@ -40,11 +40,11 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
             return
         }
         if reverseButton.titleLabel?.text == "Reverse" {
-            reverseWordsLable.text = reverseText(textFieldText)
+            reverseWordsLabel.text = textFieldText.reverseWords()
             reverseButton.setTitle("Clear", for: .normal)
         } else {
             mainTextField.text = ""
-            reverseWordsLable.text = ""
+            reverseWordsLabel.text = ""
             reverseButton.isEnabled = false
             reverseButton.setTitle("Reverse", for: .normal)
         }
@@ -58,25 +58,6 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         reverseButton.isEnabled = textField.text != nil
         return true
-    }
-    
-    public func reverseText(_ text: String) -> String {
-        var word: String = ""
-        var reversed: String = ""
-        for character in text {
-            if character == " " {
-                word = String(word.reversed())
-                reversed += word
-                reversed += " "
-                word = ""
-            } else{
-                word += String(character)
-            }
-        }
-        
-        word = String(word.reversed())
-        reversed += word
-        return reversed
     }
     
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF2F2EA628AA69E400108C83 /* String+ReverseWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F2EA528AA69E300108C83 /* String+ReverseWords.swift */; };
+		DF2F2EA728AA69E400108C83 /* String+ReverseWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F2EA528AA69E300108C83 /* String+ReverseWords.swift */; };
+		DF2F2EA828AA69E400108C83 /* String+ReverseWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2F2EA528AA69E300108C83 /* String+ReverseWords.swift */; };
 		DFB3E3982850D15900E964C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3E3972850D15900E964C8 /* AppDelegate.swift */; };
 		DFB3E39A2850D15900E964C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3E3992850D15900E964C8 /* SceneDelegate.swift */; };
 		DFB3E39C2850D15900E964C8 /* ReverseWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3E39B2850D15900E964C8 /* ReverseWordsViewController.swift */; };
@@ -36,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF2F2EA528AA69E300108C83 /* String+ReverseWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ReverseWords.swift"; sourceTree = "<group>"; };
 		DFB3E3942850D15900E964C8 /* ReverseTextAppUiKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReverseTextAppUiKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB3E3972850D15900E964C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFB3E3992850D15900E964C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 		DFB3E38B2850D15900E964C8 = {
 			isa = PBXGroup;
 			children = (
+				DF2F2EA528AA69E300108C83 /* String+ReverseWords.swift */,
 				DFB3E3962850D15900E964C8 /* ReverseTextAppUiKit */,
 				DFB3E3AD2850D15A00E964C8 /* ReverseTextAppUiKitTests */,
 				DFB3E3B72850D15A00E964C8 /* ReverseTextAppUiKitUITests */,
@@ -259,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFB3E39C2850D15900E964C8 /* ReverseWordsViewController.swift in Sources */,
+				DF2F2EA628AA69E400108C83 /* String+ReverseWords.swift in Sources */,
 				DFB3E3982850D15900E964C8 /* AppDelegate.swift in Sources */,
 				DFB3E39A2850D15900E964C8 /* SceneDelegate.swift in Sources */,
 			);
@@ -269,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFB3E3AF2850D15A00E964C8 /* ReverseTextAppUiKitTests.swift in Sources */,
+				DF2F2EA728AA69E400108C83 /* String+ReverseWords.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +285,7 @@
 			files = (
 				DFB3E3B92850D15A00E964C8 /* ReverseTextAppUiKitUITests.swift in Sources */,
 				DFB3E3BB2850D15A00E964C8 /* ReverseTextAppUiKitUITestsLaunchTests.swift in Sources */,
+				DF2F2EA828AA69E400108C83 /* String+ReverseWords.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
