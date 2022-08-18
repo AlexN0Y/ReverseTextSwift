@@ -26,7 +26,7 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
         reverseButton.setTitle("Reverse", for: .normal)
         if mainTextField.text?.isEmpty == true {
             separator.backgroundColor = UIColor.lightGray
-                reverseButton.isEnabled = false
+            reverseButton.isEnabled = false
         } else {
             separator.backgroundColor = UIColor.systemBlue
         }
@@ -40,7 +40,7 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
             return
         }
         if reverseButton.titleLabel?.text == "Reverse" {
-            reverseWordsLabel.text = textFieldText.reverseWords()
+            reverseWordsLabel.text = textFieldText.reversedByWords()
             reverseButton.setTitle("Clear", for: .normal)
         } else {
             mainTextField.text = ""

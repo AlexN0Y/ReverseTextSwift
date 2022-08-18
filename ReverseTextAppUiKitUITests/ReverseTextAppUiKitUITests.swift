@@ -15,6 +15,12 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
     private lazy var reverseStaticText = app/*@START_MENU_TOKEN@*/.staticTexts["Reverse"]/*[[".buttons[\"Reverse\"].staticTexts[\"Reverse\"]",".staticTexts[\"Reverse\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
     private lazy var clearStaticText = app/*@START_MENU_TOKEN@*/.staticTexts["Clear"]/*[[".buttons[\"Clear\"].staticTexts[\"Clear\"]",".staticTexts[\"Clear\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
     
+    override func setUp() {
+        super.setUp()
+        let setUpApp = XCUIApplication()
+        setUpApp.launch()
+    }
+    
     func test_reverseButton_CurrentLabelNameOnFirstInput() throws {
         app.launch()
         enterTextTextField.tap()
@@ -33,7 +39,7 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
         XCTAssertEqual(app.buttons.element.label, "Clear")
     }
     
-    func test_reverseButton__becomeReverseOnClearingInput() throws {
+    func test_reverseButton_becomeReverseOnClearingInput() throws {
         app.launch()
         enterTextTextField.tap()
         app.textFields.element.typeText("Hello World!")
@@ -43,7 +49,7 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
         clearStaticText.tap()
         XCTAssertEqual(app.buttons.element.label, "Reverse")
     }
-    func test_reverseButton_isEnabledWithEmptyInput() throws {
+    func test_reverseButton_DisabledWithEmptyInput() throws {
         app.launch()
         enterTextTextField.tap()
         app.textFields.element.typeText("Hello World!")

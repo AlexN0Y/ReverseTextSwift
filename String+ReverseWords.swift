@@ -9,8 +9,8 @@ import Foundation
 
 
 extension String {
-
-    func reverseWords() -> String {
+    
+    func reversedByWords() -> String {
         var word: String = ""
         var reversed: String = ""
         for character in self {
@@ -19,11 +19,10 @@ extension String {
                 reversed += word
                 reversed += " "
                 word = ""
-            } else{
+            } else {
                 word += String(character)
             }
         }
-        
         word = String(word.reversed())
         reversed += word
         return reversed

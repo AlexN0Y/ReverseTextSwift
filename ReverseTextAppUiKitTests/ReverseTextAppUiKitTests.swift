@@ -10,24 +10,24 @@ import XCTest
 
 final class ReverseTextAppUiKitTests: XCTestCase {
     
-    func testTwoWords(){
-        let s = "Hello world!"
-        XCTAssertEqual(s.reverseWords(), "olleH !dlrow")
+    func testTwoWords() {
+        let inputString = "Hello world!"
+        XCTAssertEqual(inputString.reversedByWords(), "olleH !dlrow")
     }
     
-    func testOneLetter(){
-        let s = "P"
-        XCTAssertEqual(s.reverseWords(), "P")
+    func testReverseSingleLetter() {
+        let inputString = "P"
+        XCTAssertEqual(inputString.reversedByWords(), "P")
     }
     
-    func testThreeWords(){
-        let s = "abc abc AbC"
-        XCTAssertEqual(s.reverseWords(), "cba cba CbA")
+    func testThreeWords() {
+        let inputString = "abc abc AbC"
+        XCTAssertEqual(inputString.reversedByWords(), "cba cba CbA")
     }
     
-    func testTwoWordsAndSymbol(){
-        let s = "Final test !"
-        XCTAssertEqual(s.reverseWords(), "laniF tset !")
+    func testTwoWordsAndSymbol() {
+        let inputString = "Final test !"
+        XCTAssertEqual(inputString.reversedByWords(), "laniF tset !")
     }
     
 }
