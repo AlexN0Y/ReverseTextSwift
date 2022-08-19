@@ -22,7 +22,6 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
     }
     
     func test_reverseButton_CurrentLabelNameOnFirstInput() throws {
-        app.launch()
         enterTextTextField.tap()
         app.textFields.element.typeText("Hello World!")
         app.keyboards.buttons["return"].tap()
@@ -30,7 +29,6 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
     }
     
     func test_reverseButton_becomeClearOnReversingInput() throws {
-        app.launch()
         enterTextTextField.tap()
         app.textFields.element.typeText("Hello World!")
         app.keyboards.buttons["return"].tap()
@@ -40,7 +38,6 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
     }
     
     func test_reverseButton_becomeReverseOnClearingInput() throws {
-        app.launch()
         enterTextTextField.tap()
         app.textFields.element.typeText("Hello World!")
         app.keyboards.buttons["return"].tap()
@@ -50,7 +47,6 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
         XCTAssertEqual(app.buttons.element.label, "Reverse")
     }
     func test_reverseButton_DisabledWithEmptyInput() throws {
-        app.launch()
         enterTextTextField.tap()
         app.textFields.element.typeText("Hello World!")
         app.keyboards.buttons["return"].tap()
