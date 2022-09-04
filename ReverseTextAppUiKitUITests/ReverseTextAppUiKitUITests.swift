@@ -10,10 +10,11 @@ import XCTest
 
 final class ReverseTextAppUiKitUITests: XCTestCase {
     private var app = XCUIApplication()
-    private lazy var enterTextTextField = app.textFields["Enter text:"]
+    private lazy var mainTextField = app.textFields["MainTextField"]
+    private lazy var customWordsTextField = app.textFields["CustomWordsTextField"]
     private lazy var label = app.staticTexts["Label"]
-    private lazy var reverseStaticText = app/*@START_MENU_TOKEN@*/.staticTexts["Reverse"]/*[[".buttons[\"Reverse\"].staticTexts[\"Reverse\"]",".staticTexts[\"Reverse\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-    private lazy var clearStaticText = app/*@START_MENU_TOKEN@*/.staticTexts["Clear"]/*[[".buttons[\"Clear\"].staticTexts[\"Clear\"]",".staticTexts[\"Clear\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+    private lazy var customTextView = XCUIApplication().otherElements["CustomTextView"]
+    
     
     override func setUp() {
         super.setUp()
@@ -21,38 +22,52 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
         setUpApp.launch()
     }
     
-    func test_reverseButton_CurrentLabelNameOnFirstInput() throws {
-        enterTextTextField.tap()
-        app.textFields.element.typeText("Hello World!")
+    func test_DefaultReverseType() throws {
+        mainTextField.tap()
+        mainTextField.typeText("Hello1")
         app.keyboards.buttons["return"].tap()
-        XCTAssertEqual(app.buttons.element.label, "Reverse")
+        XCTAssertEqual(label.label, "olleH1")
     }
     
-    func test_reverseButton_becomeClearOnReversingInput() throws {
-        enterTextTextField.tap()
-        app.textFields.element.typeText("Hello World!")
+    func test_CustomReverseTypeWithoutTextToIgnore() throws {
+        mainTextField.tap()
+        mainTextField.typeText("Hello1")
         app.keyboards.buttons["return"].tap()
-        reverseStaticText.tap()
-        XCTAssertEqual(label.label, "olleH !dlroW")
-        XCTAssertEqual(app.buttons.element.label, "Clear")
+        app/*@START_MENU_TOKEN@*/.buttons["Custom"]/*[[".segmentedControls.buttons[\"Custom\"]",".buttons[\"Custom\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        XCTAssertEqual(label.label, "1olleH")
+        app/*@START_MENU_TOKEN@*/.buttons["Default"]/*[[".segmentedControls.buttons[\"Default\"]",".buttons[\"Default\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
     }
     
-    func test_reverseButton_becomeReverseOnClearingInput() throws {
-        enterTextTextField.tap()
-        app.textFields.element.typeText("Hello World!")
+    func test_CustomReverseTypeWithTextToIgnore() throws {
+        mainTextField.tap()
+        mainTextField.typeText("Hello1")
         app.keyboards.buttons["return"].tap()
-        reverseStaticText.tap()
-        XCTAssertEqual(label.label, "olleH !dlroW")
-        clearStaticText.tap()
-        XCTAssertEqual(app.buttons.element.label, "Reverse")
+        app/*@START_MENU_TOKEN@*/.buttons["Custom"]/*[[".segmentedControls.buttons[\"Custom\"]",".buttons[\"Custom\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        customWordsTextField.tap()
+        customWordsTextField.typeText("1")
+        XCTAssertEqual(label.label, "olleH1")
     }
-    func test_reverseButton_DisabledWithEmptyInput() throws {
-        enterTextTextField.tap()
-        app.textFields.element.typeText("Hello World!")
+    
+    func test_CustomViewIsVisible() throws {
+        mainTextField.tap()
+        mainTextField.typeText("Hello1")
         app.keyboards.buttons["return"].tap()
-        reverseStaticText.tap()
-        XCTAssertEqual(label.label, "olleH !dlroW")
-        clearStaticText.tap()
-        XCTAssertEqual(app.buttons.element.isEnabled, false)
+        app/*@START_MENU_TOKEN@*/.buttons["Custom"]/*[[".segmentedControls.buttons[\"Custom\"]",".buttons[\"Custom\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        customWordsTextField.tap()
+        customWordsTextField.typeText("1")
+        app.keyboards.buttons["return"].tap()
+        XCTAssertEqual(true, customTextView.isEnabled)
+    }
+    
+    func test_CustomViewIsHidden() throws {
+        mainTextField.tap()
+        mainTextField.typeText("Hello1")
+        app.keyboards.buttons["return"].tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Custom"]/*[[".segmentedControls.buttons[\"Custom\"]",".buttons[\"Custom\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        customWordsTextField.tap()
+        customWordsTextField.typeText("1")
+        app.keyboards.buttons["return"].tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Default"]/*[[".segmentedControls.buttons[\"Default\"]",".buttons[\"Default\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        XCTAssertEqual(false, customTextView.exists)
     }
 }
