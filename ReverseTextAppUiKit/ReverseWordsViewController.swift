@@ -19,10 +19,29 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         customTextView.isHidden = true
+        setupAccessibility()
+    }
+    
+    private func setupAccessibility(){
         reverseWordsLabel.accessibilityIdentifier = "Label"
         customTextView.accessibilityIdentifier = "CustomTextView"
         customWordsTextField.accessibilityIdentifier = "CustomWordsTextField"
         mainTextField.accessibilityIdentifier = "MainTextField"
+    }
+    
+    private func reverseOnChange() -> Void {
+        guard let textFieldText = mainTextField.text else {
+            return
+        }
+        if mainSegmentControl.selectedSegmentIndex == 0 {
+            reverseWordsLabel.text = textFieldText.reverseLettersOnly()
+        } else {
+            guard let customTextFieldText = customWordsTextField.text else {
+                reverseWordsLabel.text = textFieldText.reversedByWords(exception: "")
+                return
+            }
+            reverseWordsLabel.text = textFieldText.reversedByWords(exception: customTextFieldText)
+        }
     }
     
     @IBAction func customTextFieldChanged() {
@@ -37,44 +56,18 @@ final class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func didChangeSegment() {
-        if mainSegmentControl.selectedSegmentIndex == 0 {
-            customTextView.isHidden = true
-            guard let textFieldText = mainTextField.text else {
-                return
-            }
-            reverseWordsLabel.text = textFieldText.reversedByWords()
-        } else {
-            guard let textFieldText = mainTextField.text else {
-                return
-            }
-            customTextView.isHidden = false
-            guard let customTextFieldText = customWordsTextField.text else {
-                reverseWordsLabel.text = textFieldText.reversedByWords(exception: "")
-                return
-            }
-            reverseWordsLabel.text = textFieldText.reversedByWords(exception: customTextFieldText)
-        }
+        customTextView.isHidden = !customTextView.isHidden
+        reverseOnChange()
     }
     
     @IBAction func mainTextFieldChanged() {
         if mainTextField.text?.isEmpty == true {
             separator.backgroundColor = UIColor.lightGray
+            reverseWordsLabel.text = ""
         } else {
             separator.backgroundColor = UIColor.systemBlue
-            guard let textFieldText = mainTextField.text else {
-                return
-            }
-            if mainSegmentControl.selectedSegmentIndex == 0 {
-                reverseWordsLabel.text = textFieldText.reversedByWords()
-            } else {
-                guard let customTextFieldText = customWordsTextField.text else {
-                    reverseWordsLabel.text = textFieldText.reversedByWords(exception: "")
-                    return
-                }
-                reverseWordsLabel.text = textFieldText.reversedByWords(exception: customTextFieldText)
-            }
+            reverseOnChange()
         }
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

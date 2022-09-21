@@ -12,27 +12,27 @@ final class ReverseTextAppUiKitTests: XCTestCase {
     
     func testTwoWords() {
         let inputString = "Hello world!"
-        XCTAssertEqual(inputString.reversedByWords(), "olleH dlrow!")
+        XCTAssertEqual(inputString.reverseLettersOnly(), "olleH dlrow!")
     }
     
     func testReverseSingleLetter() {
         let inputString = "P"
-        XCTAssertEqual(inputString.reversedByWords(), "P")
+        XCTAssertEqual(inputString.reverseLettersOnly(), "P")
     }
     
     func testThreeWords() {
         let inputString = "abc abc AbC"
-        XCTAssertEqual(inputString.reversedByWords(), "cba cba CbA")
+        XCTAssertEqual(inputString.reverseLettersOnly(), "cba cba CbA")
     }
     
     func testTwoWordsAndSymbol() {
         let inputString = "Final test !"
-        XCTAssertEqual(inputString.reversedByWords(), "laniF tset !")
+        XCTAssertEqual(inputString.reverseLettersOnly(), "laniF tset !")
     }
     
     func testReverseSymbols() {
         let inputString = "24/7 31"
-        XCTAssertEqual(inputString.reversedByWords(), "24/7 31")
+        XCTAssertEqual(inputString.reverseLettersOnly(), "24/7 31")
     }
     
     func testTwoWordsWithNoException() {
@@ -43,6 +43,11 @@ final class ReverseTextAppUiKitTests: XCTestCase {
     func testTwoWordsWithException() {
         let inputString = "Hello world!"
         XCTAssertEqual(inputString.reversedByWords(exception: "Hello"), "Hello !dlrow")
+    }
+    
+    func testTwoExceptionsInOneWord() {
+        let inputString = "helloabchello!"
+        XCTAssertEqual(inputString.reversedByWords(exception: "hello"), "hellocbahello")
     }
     
 }

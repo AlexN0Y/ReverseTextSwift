@@ -22,14 +22,14 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
         setUpApp.launch()
     }
     
-    func test_DefaultReverseType() throws {
+    func test_defaultReverseType() throws {
         mainTextField.tap()
         mainTextField.typeText("Hello1")
         app.keyboards.buttons["return"].tap()
         XCTAssertEqual(label.label, "olleH1")
     }
     
-    func test_CustomReverseTypeWithoutTextToIgnore() throws {
+    func test_customReverseTypeWithoutTextToIgnore() throws {
         mainTextField.tap()
         mainTextField.typeText("Hello1")
         app.keyboards.buttons["return"].tap()
@@ -38,7 +38,7 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
         app/*@START_MENU_TOKEN@*/.buttons["Default"]/*[[".segmentedControls.buttons[\"Default\"]",".buttons[\"Default\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
     }
     
-    func test_CustomReverseTypeWithTextToIgnore() throws {
+    func test_customReverseTypeWithTextToIgnore() throws {
         mainTextField.tap()
         mainTextField.typeText("Hello1")
         app.keyboards.buttons["return"].tap()
@@ -48,7 +48,7 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
         XCTAssertEqual(label.label, "olleH1")
     }
     
-    func test_CustomViewIsVisible() throws {
+    func test_customViewIsVisible() throws {
         mainTextField.tap()
         mainTextField.typeText("Hello1")
         app.keyboards.buttons["return"].tap()
@@ -59,7 +59,7 @@ final class ReverseTextAppUiKitUITests: XCTestCase {
         XCTAssertEqual(true, customTextView.isEnabled)
     }
     
-    func test_CustomViewIsHidden() throws {
+    func test_customViewIsHidden() throws {
         mainTextField.tap()
         mainTextField.typeText("Hello1")
         app.keyboards.buttons["return"].tap()
