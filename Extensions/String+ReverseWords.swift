@@ -11,29 +11,29 @@ import Foundation
 extension String {
     
     private func rightReverse(word: String, exception: String) -> String {
-        var tempPart: String = ""
-        var i: Int = 0
-        var tempWord: String = ""
-        while i <= Int(word.count - exception.count) {
-            let start = word.index(word.startIndex, offsetBy: i)
-            let end = word.index(word.startIndex, offsetBy: i + Int(exception.count))
+        var part: String = ""
+        var index: Int = 0
+        var newWord: String = ""
+        while index <= Int(word.count - exception.count) {
+            let start = word.index(word.startIndex, offsetBy: index)
+            let end = word.index(word.startIndex, offsetBy: index + Int(exception.count))
             let mySubstring = word[start..<end]
             if mySubstring == exception {
-                tempWord += String(tempPart.reversed())
-                tempWord += exception
-                i += Int(exception.count)
-                tempPart = ""
+                newWord += String(part.reversed())
+                newWord += exception
+                index += Int(exception.count)
+                part = ""
                 continue
             }
-            tempPart += String(word[word.index(word.startIndex, offsetBy: i)])
-            i+=1
+            part += String(word[word.index(word.startIndex, offsetBy: index)])
+            index += 1
         }
-        while i < word.count {
-            tempPart += String(word[word.index(word.startIndex, offsetBy: i)])
-            i+=1
+        while index < word.count {
+            part += String(word[word.index(word.startIndex, offsetBy: index)])
+            index += 1
         }
-        tempWord += String(tempPart.reversed())
-        return tempWord
+        newWord += String(part.reversed())
+        return newWord
     }
     
     func reversedByWords(exception: String) -> String {
@@ -71,7 +71,7 @@ extension String {
         for character in self {
             if character == " " {
                 subWord = String(subWord.reversed())
-                word+=subWord
+                word += subWord
                 reversed += word
                 reversed += " "
                 word = ""
